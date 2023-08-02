@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title>EVEN ODD APP</title>
+	<style>
+		* { font-size:50px ;font-family:Cambria; }
+		body { background-color:lightblue; }
+		h1 { background-color:black; color:white; border-radius:30px;}
+	</style>
+	<script>
+		function find()
+		{
+			event.preventDefault();
+			let num = document.getElementById("num");
+			let ans = document.getElementById("ans");
+		
+			if (num.value == "")
+			{
+				alert("ENEMIES AHEAd");
+				ans.innerHTML = "";
+				num.focus();
+				return;
+			}
+			
+			let n = parseInt(num.value);
+			let msg = "";
+			if (n % 2 == 0)
+				msg = "Even";
+			else
+				msg = "Odd";
+			ans.innerHTML = msg;
+		}
+	</script>
+</head>
+<body>
+<center>
+	<h1>EVEN ODD FINDER</h1>
+	<form onsubmit="find()">
+	<input type="number" placeholder="ENTER ANY INTEGER" id="num" />
+	<br><br>
+	<input type="submit" value="FIND" />
+	</form>
+	<h2 id="ans" />
+</center>
+</body>
+</html>
+
